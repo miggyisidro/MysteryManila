@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "449783406335",
+    "firebase_url": "https://mysterymanila-4f0b2.firebaseio.com",
+    "project_id": "mysterymanila-4f0b2",
+    "storage_bucket": "mysterymanila-4f0b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449783406335:android:e38d644aff71cb42",
+        "android_client_info": {
+          "package_name": "com.example.miggyisidro.mysterymanilabetademo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449783406335-aoutb2rh5c4anvk8pjf10q5sk7g67bfg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDO8FWZcnC5QQ0OtbRlAD4YTE8iTVFt_A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
