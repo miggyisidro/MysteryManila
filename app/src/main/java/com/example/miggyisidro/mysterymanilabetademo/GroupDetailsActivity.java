@@ -10,6 +10,7 @@ public class GroupDetailsActivity extends AppCompatActivity {
 
     private Button nextPage;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

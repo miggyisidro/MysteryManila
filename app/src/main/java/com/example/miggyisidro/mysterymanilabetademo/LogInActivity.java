@@ -76,8 +76,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                 progressDialog.dismiss();
                 if(task.isSuccessful()){
                     Toast.makeText(LogInActivity.this, "Signed in Successfully!", Toast.LENGTH_SHORT).show();
-                    Intent goToBooking = new Intent(LogInActivity.this, OSHomeActivity.class);
-                    startActivity(goToBooking);
+                    Intent goToOShome = new Intent(LogInActivity.this, OSHomeActivity.class);
+                    startActivity(goToOShome);
                 }
                 else{
                     Toast.makeText(LogInActivity.this, "Could not Sign In. Please try again.", Toast.LENGTH_SHORT).show();

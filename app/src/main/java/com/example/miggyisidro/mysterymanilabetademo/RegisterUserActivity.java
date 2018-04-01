@@ -74,7 +74,7 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
                 if(task.isSuccessful()){
                     // Toast.makeText(RegisterUserActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                     finish();
-                    startActivity(new Intent(getApplicationContext(), BookingsActivity.class));
+                    startActivity(new Intent(getApplicationContext(), OSHomeActivity.class));
                 }
                 else{
                     Toast.makeText(RegisterUserActivity.this, "Could not Register. Please try again.", Toast.LENGTH_SHORT).show();

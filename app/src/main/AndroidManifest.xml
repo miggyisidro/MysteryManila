@@ -12,12 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".RegisterUserActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
         <activity android:name=".BookingsActivity" />
         <activity android:name=".LogInActivity" />
         <activity android:name=".ViewGameActivity" />
@@ -26,7 +26,8 @@
         <activity android:name=".OCRActivity" />
         <activity android:name=".PlayerDetailsActivity" />
         <activity android:name=".TermsActivity" />
-        <activity android:name=".OSHomeActivity"></activity>
+        <activity android:name=".OSHomeActivity"/>
+
     </application>
 
 </manifest>
