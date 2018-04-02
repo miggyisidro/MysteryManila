@@ -115,6 +115,9 @@ public class BookingsActivity extends Activity {
 
     public void prepareData(){
 
+        //String id = "0101";
+        //RecyclerData booking = new RecyclerData(id, )
+
 
         /*
         RecyclerData mLog = new RecyclerData();
