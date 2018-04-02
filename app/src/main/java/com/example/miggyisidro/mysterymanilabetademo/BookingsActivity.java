@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class BookingsActivity extends Activity implements RemoveClickListner {
+public class BookingsActivity extends Activity {
 
     private FirebaseAuth firebaseAuth;
 
@@ -54,7 +54,7 @@ public class BookingsActivity extends Activity implements RemoveClickListner {
         btnLogOut = (Button) findViewById(R.id.btnLogOut);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        mRecyclerAdapter = new RecyclerAdapter(myList,this);
+        mRecyclerAdapter = new RecyclerAdapter(BookingsActivity.this, myList);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
@@ -116,6 +116,7 @@ public class BookingsActivity extends Activity implements RemoveClickListner {
     public void prepareData(){
 
 
+        /*
         RecyclerData mLog = new RecyclerData();
         mLog.setRoomName("Pym Particle");
         mLog.setSchedule("3:00pm-4:30pm");
@@ -175,12 +176,8 @@ public class BookingsActivity extends Activity implements RemoveClickListner {
 
         myList.add(mLog4);
         mRecyclerAdapter.notifyData(myList);
+         */
 
-    }
-    @Override
-    public void OnRemoveClick(int index) {
-        myList.remove(index);
-        mRecyclerAdapter.notifyData(myList);
     }
 
     protected void onStart(){
@@ -199,7 +196,8 @@ public class BookingsActivity extends Activity implements RemoveClickListner {
                     myList.add(bookings);
                 }
 
-                //RecyclerAdapter adapter = new RecyclerAdapter(myList, this);
+                RecyclerAdapter adapter = new RecyclerAdapter(BookingsActivity.this, myList);
+                mRecyclerView.setAdapter(adapter);
             }
 
             @Override

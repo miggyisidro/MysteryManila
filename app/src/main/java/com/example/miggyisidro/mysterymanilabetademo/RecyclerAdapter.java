@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -25,11 +24,10 @@ import java.util.ArrayList;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecyclerItemViewHolder> {
     private ArrayList<RecyclerData> myList;
     int mLastPosition = 0;
-    private RemoveClickListner mListner;
     private Context context;
-    public RecyclerAdapter(ArrayList<RecyclerData> myList,RemoveClickListner listner) {
+    public RecyclerAdapter(Context context, ArrayList<RecyclerData> myList) {
         this.myList = myList;
-        mListner=listner;
+        this.context = context;
     }
     public RecyclerItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row, parent, false);
