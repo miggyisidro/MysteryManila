@@ -7,7 +7,7 @@
     tools:context="com.example.miggyisidro.mysterymanilabetademo.PlayerDetailsActivity">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/firstNameTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -58,7 +58,7 @@
         app:layout_constraintVertical_bias="0.017" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/lastNameTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -76,7 +76,7 @@
         app:layout_constraintVertical_bias="0.371" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/emailTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -94,7 +94,7 @@
         app:layout_constraintVertical_bias="0.525" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/numberTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -112,7 +112,7 @@
         app:layout_constraintVertical_bias="0.652" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/cityTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
