@@ -11,8 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -173,13 +176,37 @@ public class BookingsActivity extends Activity implements RemoveClickListner {
         myList.add(mLog4);
         mRecyclerAdapter.notifyData(myList);
 
-
-
     }
     @Override
     public void OnRemoveClick(int index) {
         myList.remove(index);
         mRecyclerAdapter.notifyData(myList);
+    }
+
+    protected void onStart(){
+        super.onStart();
+
+        //pulling from firebase
+        databaseBooking.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                myList.clear();
+
+                for(DataSnapshot bookingSnapshot : dataSnapshot.getChildren()){
+                    RecyclerData bookings = bookingSnapshot.getValue(RecyclerData.class);
+
+                    myList.add(bookings);
+                }
+
+                //RecyclerAdapter adapter = new RecyclerAdapter(myList, this);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }
 
