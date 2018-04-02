@@ -51,7 +51,7 @@ public class ViewGameActivity extends AppCompatActivity {
         game = (TextView) findViewById(R.id.gameNumber);
 
 
-        databaseGameDetails = FirebaseDatabase.getInstance().getReference();
+        databaseGameDetails = FirebaseDatabase.getInstance().getReference("gameInput");
 
 
         bookingID =  getIntent().getStringExtra("bookingID");
@@ -109,7 +109,9 @@ public class ViewGameActivity extends AppCompatActivity {
                 String size = groupsize.getSelectedItem().toString();
                 String id = numberID.getSelectedItem().toString();
                 String booking = game.getText().toString();
-                //Hello wordl
+
+                // mDatabase.child("users").child(userId).setValue(user);
+                databaseGameDetails.child("gameInput").child("bookingID").setValue(booking);
 
 
                 Intent nextPageView = new Intent(ViewGameActivity.this, PaymentActivity.class);
