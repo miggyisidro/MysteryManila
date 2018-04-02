@@ -25,6 +25,7 @@ public class ViewGameActivity extends AppCompatActivity {
     private Spinner numberID;
     private TextView game;
     private String bookingID;
+    private ArrayList<String> data;
 
     ArrayAdapter<String> adapter;
     ArrayAdapter<String> adapter2;
@@ -55,7 +56,7 @@ public class ViewGameActivity extends AppCompatActivity {
 
         bookingID =  getIntent().getStringExtra("bookingID");
 
-        game.setText(bookingID);
+        game.setText("Game#" + bookingID);
 
 
 
@@ -103,7 +104,18 @@ public class ViewGameActivity extends AppCompatActivity {
         nextPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String gk = gamekeepers.getSelectedItem().toString();
+                String size = groupsize.getSelectedItem().toString();
+                String id = numberID.getSelectedItem().toString();
+                String booking = game.getText().toString();
+
+
                 Intent nextPageView = new Intent(ViewGameActivity.this, PaymentActivity.class);
+                nextPageView.putExtra("gk",gk);
+                nextPageView.putExtra("size",size);
+                nextPageView.putExtra("id",id);
+                nextPageView.putExtra("bookingID",booking);
                 startActivity(nextPageView);
 
 
