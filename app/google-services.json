@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "449783406335-81e9cimhlpga13t5cc2nfsphakt8vkfk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.miggyisidro.mysterymanilabetademo",
+            "certificate_hash": "15707a78c08467bf3683d083db7a99d0416a4ba1"
+          }
+        },
+        {
           "client_id": "449783406335-aoutb2rh5c4anvk8pjf10q5sk7g67bfg.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449783406335-aoutb2rh5c4anvk8pjf10q5sk7g67bfg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
