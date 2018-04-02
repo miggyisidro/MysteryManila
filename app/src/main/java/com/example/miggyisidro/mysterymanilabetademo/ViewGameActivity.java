@@ -109,6 +109,7 @@ public class ViewGameActivity extends AppCompatActivity {
                 String size = groupsize.getSelectedItem().toString();
                 String id = numberID.getSelectedItem().toString();
                 String booking = game.getText().toString();
+                //Hello wordl
 
 
                 Intent nextPageView = new Intent(ViewGameActivity.this, PaymentActivity.class);
