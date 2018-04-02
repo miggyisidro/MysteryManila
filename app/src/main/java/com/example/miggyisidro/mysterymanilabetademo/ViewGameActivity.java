@@ -3,10 +3,15 @@ package com.example.miggyisidro.mysterymanilabetademo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +29,8 @@ public class ViewGameActivity extends AppCompatActivity {
     List<String> groupsizelist;
     List<String> numeberIDlist;
 
+    DatabaseReference databaseGameDetails;
+
 
 
 
@@ -36,6 +43,8 @@ public class ViewGameActivity extends AppCompatActivity {
         gamekeepers = (Spinner) findViewById(R.id.gameKeeperSpinner);
         groupsize = (Spinner) findViewById(R.id.groupSizeSpinner);
         numberID = (Spinner) findViewById(R.id.IdSpinner);
+
+        databaseGameDetails = FirebaseDatabase.getInstance().getReference();
 
 
         list = new ArrayList<String>();
@@ -88,6 +97,35 @@ public class ViewGameActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void addDetails(){
+        String gk = gamekeepers.getSelectedItem().toString();
+        String getGroupSize = groupsize.getSelectedItem().toString();
+        String getNumberOfID = numberID.getSelectedItem().toString();
+
+        if(!TextUtils.isEmpty(gk)){
+
+        }
+        else{
+            Toast.makeText(this, "You should choose a Game Keeper", Toast.LENGTH_LONG).show();
+        }
+
+        if(!TextUtils.isEmpty(getGroupSize)){
+
+        }
+        else{
+            Toast.makeText(this, "You should choose a Group Size", Toast.LENGTH_LONG).show();
+        }
+
+        if(!TextUtils.isEmpty(getNumberOfID)){
+
+        }
+        else{
+            Toast.makeText(this, "You should choose the number of IDs your group has", Toast.LENGTH_LONG).show();
+        }
+
+
     }
 
 
