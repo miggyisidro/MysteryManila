@@ -5,6 +5,8 @@ package com.example.miggyisidro.mysterymanilabetademo;
  */
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,6 +26,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
     private ArrayList<RecyclerData> myList;
     int mLastPosition = 0;
     private RemoveClickListner mListner;
+    private Context context;
     public RecyclerAdapter(ArrayList<RecyclerData> myList,RemoveClickListner listner) {
         this.myList = myList;
         mListner=listner;
@@ -70,13 +73,31 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
             TextViewTransactionID = (TextView) parent.findViewById(R.id.txtTransactionID);
             TextViewGroupSize = (TextView) parent.findViewById(R.id.txtGroupSize);
             TextViewDate = (TextView) parent.findViewById(R.id.txtDate);
+            context = itemView.getContext();
 
 
             mainLayout = (LinearLayout) parent.findViewById(R.id.mainLayout);
             mainLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(itemView.getContext(), "Position:" + Integer.toString(getPosition()), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(itemView.getContext(), "Position:" + Integer.toString(getPosition()), Toast.LENGTH_SHORT).show();
+
+                    String bookingID = "";
+                    String roomName ="";
+                    String schedule = "";
+                    String name ="";
+                    String groupSize="";
+                    String date="";
+
+                    Intent intent;
+
+
+                    intent = new Intent(context, ViewGameActivity.class);
+                    bookingID =(myList.get(getAdapterPosition()).getTransactionID());
+                    intent.putExtra("bookingID" ,bookingID);
+                    context.startActivity(intent);
+
+
                 }
             });
 

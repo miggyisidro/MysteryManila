@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +23,9 @@ public class ViewGameActivity extends AppCompatActivity {
     private Spinner gamekeepers ;
     private Spinner groupsize;
     private Spinner numberID;
+    private TextView game;
+    private String bookingID;
+
     ArrayAdapter<String> adapter;
     ArrayAdapter<String> adapter2;
     ArrayAdapter<String> adapter3;
@@ -43,8 +47,16 @@ public class ViewGameActivity extends AppCompatActivity {
         gamekeepers = (Spinner) findViewById(R.id.gameKeeperSpinner);
         groupsize = (Spinner) findViewById(R.id.groupSizeSpinner);
         numberID = (Spinner) findViewById(R.id.IdSpinner);
+        game = (TextView) findViewById(R.id.gameNumber);
+
 
         databaseGameDetails = FirebaseDatabase.getInstance().getReference();
+
+
+        bookingID =  getIntent().getStringExtra("bookingID");
+
+        game.setText(bookingID);
+
 
 
         list = new ArrayList<String>();
