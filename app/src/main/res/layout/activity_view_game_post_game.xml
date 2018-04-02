@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.miggyisidro.mysterymanilabetademo.RegisterUserActivity">
+    tools:context=".ViewGamePostGame">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:gravity="center">
 
             <TextView
-                android:id="@+id/gameNumber"
+                android:id="@+id/gameNumberpost"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="5dp"
@@ -53,7 +53,7 @@
                 android:layout_marginTop="5dp"/>
 
             <TextView
-                android:id="@+id/superVisorTxt"
+                android:id="@+id/superVisorTxtPost"
                 android:layout_width="match_parent"
                 android:layout_height="34dp"
                 android:layout_marginTop="5dp"
@@ -65,57 +65,38 @@
                 android:layout_height="39dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="ASSIGN GAMEKEEPER:"
+                android:text="GAMEKEEPER ASSIGNED:"
                 android:textSize="14sp" />
 
-            <Spinner
-                android:id="@+id/gameKeeperSpinner"
-                android:layout_width="288dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+            <TextView
+                android:id="@+id/gkTxtPost"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
                 android:gravity="center_vertical|center_horizontal"
-                android:textColor="#1325f2"/>
+                android:text="TextView" />
 
             <TextView
                 android:id="@+id/textView21"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="GROUP SIZE:"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginTop="5dp"/>
-
-            <Spinner
-                android:id="@+id/groupSizeSpinner"
-                android:layout_width="246dp"
-                android:layout_height="wrap_content"
+                android:layout_height="39dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center_vertical|center_horizontal"
-                android:textAlignment="center"
-                android:textColor="#1325f2"/>
+                android:text="GROUP SIZE:" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/gr"
                 android:layout_width="match_parent"
-                android:layout_height="31dp"
+                android:layout_height="34dp"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="Numbers of players with ID:"
-                android:layout_marginTop="5dp"/>
-
-            <Spinner
-                android:id="@+id/IdSpinner"
-                android:layout_width="246dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:textColor="#1325f2"/>
+                android:text="TextView" />
 
             <TextView
                 android:id="@+id/textView23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Click NEXT to process to registration"
+                android:layout_marginTop="5dp"
                 android:gravity="center_vertical|center_horizontal"
-                android:layout_marginTop="5dp"/>
+                android:text="Click NEXT to process to postgame" />
 
             <Button
                 android:id="@+id/button3"
@@ -133,5 +114,3 @@
     </ScrollView>
 
 </LinearLayout>
-
-
