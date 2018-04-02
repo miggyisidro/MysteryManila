@@ -40,6 +40,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         holder.TextViewSchedule.setText(myList.get(position).getSchedule());
         holder.TextViewName.setText(myList.get(position).getName());
         holder.TextViewTransactionID.setText(myList.get(position).getTransactionID());
+        holder.TextViewGroupSize.setText(myList.get(position).getGroupSize());
+        holder.TextViewDate.setText(myList.get(position).getDate());
 
         mLastPosition =position;
     }
@@ -57,6 +59,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         private final TextView TextViewSchedule;
         private final TextView TextViewName;
         private final TextView TextViewTransactionID;
+        private final TextView TextViewGroupSize;
+        private final TextView TextViewDate;
         private LinearLayout mainLayout;
         public RecyclerItemViewHolder(final View parent) {
             super(parent);
@@ -64,6 +68,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
             TextViewSchedule = (TextView) parent.findViewById(R.id.txtSchedule);
             TextViewName = (TextView) parent.findViewById(R.id.txtName);
             TextViewTransactionID = (TextView) parent.findViewById(R.id.txtTransactionID);
+            TextViewGroupSize = (TextView) parent.findViewById(R.id.txtGroupSize);
+            TextViewDate = (TextView) parent.findViewById(R.id.txtDate);
+
 
             mainLayout = (LinearLayout) parent.findViewById(R.id.mainLayout);
             mainLayout.setOnClickListener(new View.OnClickListener() {

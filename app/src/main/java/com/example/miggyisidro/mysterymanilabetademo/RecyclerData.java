@@ -16,6 +16,8 @@ public class RecyclerData {
     String schedule;
     String name;
     String transactionID;
+    String groupSize;
+    String date;
     RecyclerView data;
 
 
@@ -51,7 +53,21 @@ public class RecyclerData {
         this.transactionID = transactionID;
     }
 
+    public String getGroupSize() {
+        return groupSize;
+    }
 
+    public void setGroupSize(String groupSize) {
+        this.groupSize = groupSize;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
 
 }

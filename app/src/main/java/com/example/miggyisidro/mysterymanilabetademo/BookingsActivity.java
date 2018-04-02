@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -28,12 +30,17 @@ public class BookingsActivity extends Activity implements RemoveClickListner {
     EditText etTitle, etDescription;
     String title = "",description = "";
 
+    DatabaseReference databaseBooking;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookings);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        databaseBooking = FirebaseDatabase.getInstance().getReference("bookings");
+
 
         if(firebaseAuth.getCurrentUser() == null){
             finish();
@@ -104,20 +111,30 @@ public class BookingsActivity extends Activity implements RemoveClickListner {
     }
 
     public void prepareData(){
+
+
         RecyclerData mLog = new RecyclerData();
         mLog.setRoomName("Pym Particle");
         mLog.setSchedule("3:00pm-4:30pm");
         mLog.setName("Miggy Isidro");
         mLog.setTransactionID("0001");
+        mLog.setDate("April 7, 2018");
+        mLog.setGroupSize("6");
+
 
         myList.add(mLog);
         mRecyclerAdapter.notifyData(myList);
+
+
+
 
         RecyclerData mLog1 = new RecyclerData();
         mLog1.setRoomName("Sinister Sensorium");
         mLog1.setSchedule("7:15pm-8:45pm");
         mLog1.setName("Raffy Cañares");
         mLog1.setTransactionID("0002");
+        mLog1.setDate("April 12, 2018");
+        mLog1.setGroupSize("3");
 
         myList.add(mLog1);
         mRecyclerAdapter.notifyData(myList);
@@ -127,6 +144,8 @@ public class BookingsActivity extends Activity implements RemoveClickListner {
         mLog2.setSchedule("6:15pm-7:45pm");
         mLog2.setName("Albert Einstein");
         mLog2.setTransactionID("2158");
+        mLog2.setDate("April 11, 2018");
+        mLog2.setGroupSize("3");
 
         myList.add(mLog2);
         mRecyclerAdapter.notifyData(myList);
@@ -136,18 +155,25 @@ public class BookingsActivity extends Activity implements RemoveClickListner {
         mLog3.setSchedule("8:30pm-10:00pm");
         mLog3.setName("Chuck Chang");
         mLog3.setTransactionID("3342");
+        mLog3.setDate("April 10, 2018");
+        mLog3.setGroupSize("4");
 
         myList.add(mLog3);
         mRecyclerAdapter.notifyData(myList);
+
 
         RecyclerData mLog4 = new RecyclerData();
         mLog4.setRoomName("Alien Assault");
         mLog4.setSchedule("7:15-8:45");
         mLog4.setName("Pauline Ordenes");
         mLog4.setTransactionID("0033");
+        mLog4.setDate("April 8, 2018");
+        mLog4.setGroupSize("5");
 
         myList.add(mLog4);
         mRecyclerAdapter.notifyData(myList);
+
+
 
     }
     @Override
