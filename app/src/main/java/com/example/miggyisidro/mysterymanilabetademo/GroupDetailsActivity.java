@@ -60,16 +60,23 @@ public class GroupDetailsActivity extends AppCompatActivity {
 
 
                                             if (fb.isChecked()==true) {
-                                            list.add(fb.getText().toString());
+                                                String a = fb.getText().toString();
+                                            list.add(a);
                                             }
                                             if (ig.isChecked()==true) {
-                                                list.add(ig.getText().toString());
+
+                                                String b = ig.getText().toString();
+                                                list.add(b);
                                             }
                                             if (twitter.isChecked()==true) {
-                                                list.add(twitter.getText().toString());
+
+                                                String c = twitter.getText().toString();
+                                                list.add(c);
                                             }
                                             if (friends.isChecked()==true) {
-                                                list.add(friends.getText().toString());
+
+                                                String d = friends.getText().toString();
+                                                list.add(d);
                                             }
 
                                             for(int i = 0; list.size()>i;i++) {
