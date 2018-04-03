@@ -58,6 +58,7 @@ public class GroupDetailsActivity extends AppCompatActivity {
 
                                             radio = (RadioButton) findViewById(selectedDiscount);
 
+                                            list = new ArrayList<String>();
 
                                             if (fb.isChecked()==true) {
                                                 String a = fb.getText().toString();
