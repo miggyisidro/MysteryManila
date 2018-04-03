@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 public class GroupDetailsActivity extends AppCompatActivity {
@@ -25,6 +28,8 @@ public class GroupDetailsActivity extends AppCompatActivity {
     private ArrayList<String> list;
     private String heard = "";
 
+    DatabaseReference databaseGroupDetails;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,8 @@ public class GroupDetailsActivity extends AppCompatActivity {
         ig = (CheckBox) findViewById(R.id.igBox);
         twitter = (CheckBox) findViewById(R.id.twitterBox);
         friends = (CheckBox) findViewById(R.id.friendsBox);
+
+        databaseGroupDetails = FirebaseDatabase.getInstance().getReference("groupDetails");
 
 
 
@@ -69,10 +76,11 @@ public class GroupDetailsActivity extends AppCompatActivity {
                                             }
 
 
-                //radio.getText().toString();
-                //groupName.getText().toString();
-                  heard.toString();
-
+                //insert Group Details
+                String id = databaseGroupDetails.push().getKey();
+                databaseGroupDetails.child(id).child("firstTime").setValue(radio.getText().toString());
+                databaseGroupDetails.child(id).child("groupName").setValue(groupName.getText().toString());
+                databaseGroupDetails.child(id).child("socialMedia").setValue(heard.toString());
 
 
 
