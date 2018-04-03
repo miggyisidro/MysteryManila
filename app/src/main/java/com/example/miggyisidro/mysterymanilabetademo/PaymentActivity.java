@@ -12,6 +12,8 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +32,8 @@ public class PaymentActivity extends AppCompatActivity {
     private String size;
     private String bookingID;
 
+    DatabaseReference databasePayment;
+
 
 
 
@@ -45,11 +49,14 @@ public class PaymentActivity extends AppCompatActivity {
         status = (Spinner) findViewById (R.id.statusSpinner);
         radioGroup = (RadioGroup) findViewById(R.id.groupdiscount);
 
+        // db instance and reference
+        // databasePayment = FirebaseDatabase.getInstance().getReference("")
+
 
         list = new ArrayList<String>();
         list.add("PAID: FULLY PAID");
         list.add("PAID: WITH ADDITIONAL");
-        list.add("PEND: FULLY PIAD");
+        list.add("PEND: FULLY PAID");
         list.add("PEND; PARTIALLY PAID");
         list.add("PEND: CASH");
         list.add("FREE: GAME");

@@ -26,7 +26,7 @@ public class PlayerDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_details);
 
-        databasePlayerDetails = FirebaseDatabase.getInstance().getReference();
+        databasePlayerDetails = FirebaseDatabase.getInstance().getReference("customerDetails");
 
         next = (Button)findViewById(R.id.next_playerdetails);
         firstName = (EditText) findViewById(R.id.firstNameTxt);
@@ -47,6 +47,15 @@ public class PlayerDetailsActivity extends AppCompatActivity {
                 //email.getText().toString();
                 //Number.getText().toString();
                 //city.getText().toString();
+
+                String customerID = databasePlayerDetails.getKey();
+
+                //sample
+                databasePlayerDetails.child(customerID).child("firstName").setValue(firstName.getText().toString());
+                databasePlayerDetails.child(customerID).child("lastName").setValue(lastName.getText().toString());
+                databasePlayerDetails.child(customerID).child("email").setValue(email.getText().toString());
+                databasePlayerDetails.child(customerID).child("city").setValue(city.getText().toString());
+                databasePlayerDetails.child(customerID).child("number").setValue(Number.getText().toString());
 
 
 
