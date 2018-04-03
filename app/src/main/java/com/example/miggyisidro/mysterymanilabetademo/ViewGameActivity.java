@@ -23,9 +23,10 @@ public class ViewGameActivity extends AppCompatActivity {
     private Spinner gamekeepers ;
     private Spinner groupsize;
     private Spinner numberID;
-    private TextView game;
+    private String game;
     private String bookingID;
     private ArrayList<String> data;
+    private TextView display;
 
     ArrayAdapter<String> adapter;
     ArrayAdapter<String> adapter2;
@@ -33,6 +34,7 @@ public class ViewGameActivity extends AppCompatActivity {
     List<String> list;
     List<String> groupsizelist;
     List<String> numeberIDlist;
+
 
     DatabaseReference databaseGameDetails;
 
@@ -48,15 +50,17 @@ public class ViewGameActivity extends AppCompatActivity {
         gamekeepers = (Spinner) findViewById(R.id.gameKeeperSpinner);
         groupsize = (Spinner) findViewById(R.id.groupSizeSpinner);
         numberID = (Spinner) findViewById(R.id.IdSpinner);
-        game = (TextView) findViewById(R.id.gameNumber);
+        display = (TextView) findViewById(R.id.gameNumber);
 
 
         databaseGameDetails = FirebaseDatabase.getInstance().getReference("gameInput");
 
 
-        bookingID =  getIntent().getStringExtra("bookingID");
+        bookingID =  getIntent().getStringExtra("bookingID").toString();
 
-        game.setText("Game#" + bookingID);
+
+
+        display.setText("Game#" + bookingID);
 
 
 
@@ -111,7 +115,7 @@ public class ViewGameActivity extends AppCompatActivity {
                 String size = groupsize.getSelectedItem().toString();
                 // number of members who have IDs is only for the repititions of the loop for the OCR feature
                 String id = numberID.getSelectedItem().toString();
-                String booking = game.getText().toString();
+                String booking = bookingID;
 
                 // mDatabase.child("users").child(userId).setValue(user);
                 databaseGameDetails.child(gameInputID).child("bookingID").setValue(booking);
