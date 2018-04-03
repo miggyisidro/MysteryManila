@@ -66,6 +66,8 @@ public class PaymentActivity extends AppCompatActivity {
         status.setAdapter(adapter);
 
         id = getIntent().getStringExtra("id").toString();
+        bookingID = getIntent().getStringExtra("bookingID").toString();
+
 
 
 
@@ -87,7 +89,7 @@ public class PaymentActivity extends AppCompatActivity {
                 //payment.getText().toString();
                 //status.getSelectedItem().toString();
                 //radioButton.getText().toString();
-                //heehhe
+
 
                 Intent next = new Intent(PaymentActivity.this, GroupDetailsActivity.class);
 

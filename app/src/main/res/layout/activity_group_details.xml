@@ -120,7 +120,7 @@
     </RadioGroup>
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/fbBox"
         android:layout_width="149dp"
         android:layout_height="27dp"
         android:layout_marginBottom="8dp"
@@ -135,7 +135,7 @@
         app:layout_constraintVertical_bias="0.711" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/twitterBox"
         android:layout_width="149dp"
         android:layout_height="27dp"
         android:layout_marginBottom="8dp"
@@ -150,7 +150,7 @@
         app:layout_constraintVertical_bias="0.769" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/igBox"
         android:layout_width="149dp"
         android:layout_height="27dp"
         android:layout_marginBottom="8dp"
@@ -165,7 +165,7 @@
         app:layout_constraintVertical_bias="0.826" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/friendsBox"
         android:layout_width="149dp"
         android:layout_height="27dp"
         android:layout_marginBottom="8dp"
