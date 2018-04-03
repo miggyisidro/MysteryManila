@@ -67,6 +67,7 @@ public class PaymentActivity extends AppCompatActivity {
 
         id = getIntent().getStringExtra("id").toString();
         bookingID = getIntent().getStringExtra("bookingID").toString();
+        size = getIntent().getStringExtra("size");
 
 
 

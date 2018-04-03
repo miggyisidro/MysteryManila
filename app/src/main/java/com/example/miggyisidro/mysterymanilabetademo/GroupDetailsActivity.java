@@ -64,7 +64,7 @@ public class GroupDetailsActivity extends AppCompatActivity {
                                                 list.add(friends.getText().toString());
                                             }
 
-                                            for(int i = 0; list.size()<i;i++) {
+                                            for(int i = 0; list.size()>i;i++) {
                                                 heard = heard + " " + list.get(i).toString();
                                             }
 
