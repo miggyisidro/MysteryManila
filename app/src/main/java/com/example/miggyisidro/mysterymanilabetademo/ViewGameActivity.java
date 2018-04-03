@@ -105,19 +105,25 @@ public class ViewGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                String gameInputID = databaseGameDetails.push().getKey();
+
                 String gk = gamekeepers.getSelectedItem().toString();
                 String size = groupsize.getSelectedItem().toString();
-                String id = numberID.getSelectedItem().toString();
+                // number of members who have IDs is only for the repititions of the loop for the OCR feature
+                // String id = numberID.getSelectedItem().toString();
                 String booking = game.getText().toString();
 
                 // mDatabase.child("users").child(userId).setValue(user);
-                databaseGameDetails.child("gameInput").child("bookingID").setValue(booking);
+                databaseGameDetails.child(gameInputID).child("bookingID").setValue(booking);
+                databaseGameDetails.child(gameInputID).child("gamekeeper").setValue(gk);
+                databaseGameDetails.child(gameInputID).child("groupSize").setValue(size);
+
 
 
                 Intent nextPageView = new Intent(ViewGameActivity.this, PaymentActivity.class);
                 nextPageView.putExtra("gk",gk);
                 nextPageView.putExtra("size",size);
-                nextPageView.putExtra("id",id);
+                // nextPageView.putExtra("id",id);
                 nextPageView.putExtra("bookingID",booking);
                 startActivity(nextPageView);
 
