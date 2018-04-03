@@ -58,22 +58,24 @@ public class GroupDetailsActivity extends AppCompatActivity {
 
                                             radio = (RadioButton) findViewById(selectedDiscount);
 
-                                            if (fb.isChecked()) {
+
+                                            if (fb.isChecked()==true) {
                                             list.add(fb.getText().toString());
                                             }
-                                            if (ig.isChecked()) {
+                                            if (ig.isChecked()==true) {
                                                 list.add(ig.getText().toString());
                                             }
-                                            if (twitter.isChecked()) {
+                                            if (twitter.isChecked()==true) {
                                                 list.add(twitter.getText().toString());
                                             }
-                                            if (friends.isChecked()) {
+                                            if (friends.isChecked()==true) {
                                                 list.add(friends.getText().toString());
                                             }
 
                                             for(int i = 0; list.size()>i;i++) {
                                                 heard = heard + " " + list.get(i).toString();
                                             }
+
 
 
                 //insert Group Details
