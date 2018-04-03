@@ -24,6 +24,8 @@ public class GroupDetailsActivity extends AppCompatActivity {
 
         nextPage = (Button) findViewById(R.id.button);
         group = (RadioGroup) findViewById(R.id.radioGroup);
+        groupName = (EditText) findViewById(R.id.groupNameTxt);
+
 
 
         nextPage.setOnClickListener(new View.OnClickListener() {
@@ -33,6 +35,12 @@ public class GroupDetailsActivity extends AppCompatActivity {
                 int selectedDiscount = group.getCheckedRadioButtonId();
 
                 radio = (RadioButton) findViewById(selectedDiscount);
+
+                //radio.getText().toString();
+                //groupName.getText().toString();
+
+
+
 
                 Intent next = new Intent(GroupDetailsActivity.this, OCRActivity.class);
                 startActivity(next);
