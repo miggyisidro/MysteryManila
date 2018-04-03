@@ -58,10 +58,11 @@ public class PaymentActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         status.setAdapter(adapter);
 
-        id = getIntent().getStringExtra("id");
-        size = getIntent().getStringExtra("size");
-        gk = getIntent().getStringExtra("gk");
-        bookingID = getIntent().getStringExtra("bookingID");
+        id = getIntent().getStringExtra("id").toString();
+
+
+
+
 
 
 
@@ -75,7 +76,10 @@ public class PaymentActivity extends AppCompatActivity {
 
                 radioButton = (RadioButton) findViewById(selectedDiscount);
 
-
+                //Di ko na lagyan ng variable kasi sobrang dami na lagay mo na to rekta sa query
+                //payment.getText().toString();
+                //status.getSelectedItem().toString();
+                //radioButton.getText().toString();
 
                 Intent next = new Intent(PaymentActivity.this, GroupDetailsActivity.class);
 

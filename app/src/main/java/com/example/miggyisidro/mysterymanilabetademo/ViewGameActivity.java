@@ -110,7 +110,7 @@ public class ViewGameActivity extends AppCompatActivity {
                 String gk = gamekeepers.getSelectedItem().toString();
                 String size = groupsize.getSelectedItem().toString();
                 // number of members who have IDs is only for the repititions of the loop for the OCR feature
-                // String id = numberID.getSelectedItem().toString();
+                String id = numberID.getSelectedItem().toString();
                 String booking = game.getText().toString();
 
                 // mDatabase.child("users").child(userId).setValue(user);
@@ -123,7 +123,7 @@ public class ViewGameActivity extends AppCompatActivity {
                 Intent nextPageView = new Intent(ViewGameActivity.this, PaymentActivity.class);
                 nextPageView.putExtra("gk",gk);
                 nextPageView.putExtra("size",size);
-                // nextPageView.putExtra("id",id);
+                nextPageView.putExtra("id",id);
                 nextPageView.putExtra("bookingID",booking);
                 startActivity(nextPageView);
 

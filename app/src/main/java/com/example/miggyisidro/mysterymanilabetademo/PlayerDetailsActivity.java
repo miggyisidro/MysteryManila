@@ -41,6 +41,16 @@ public class PlayerDetailsActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //insert to database query
+                //firstName.getText().toString();
+                //lastName.getText().toString();
+                //email.getText().toString();
+                //Number.getText().toString();
+                //city.getText().toString();
+
+
+
+
                 Intent next = new Intent(PlayerDetailsActivity.this, TermsActivity.class);
                 startActivity(next);
             }
