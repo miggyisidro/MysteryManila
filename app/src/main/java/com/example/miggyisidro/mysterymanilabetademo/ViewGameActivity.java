@@ -126,6 +126,7 @@ public class ViewGameActivity extends AppCompatActivity {
 
                 Intent nextPageView = new Intent(ViewGameActivity.this, PaymentActivity.class);
                 nextPageView.putExtra("gk",gk);
+                nextPageView.putExtra("gameInputID",gameInputID);
                 nextPageView.putExtra("size",size);
                 nextPageView.putExtra("id",id);
                 nextPageView.putExtra("bookingID",booking);

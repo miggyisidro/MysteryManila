@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,12 +32,9 @@ public class PaymentActivity extends AppCompatActivity {
     private String gk;
     private String size;
     private String bookingID;
+    private String gameInputID;
 
     DatabaseReference databasePayment;
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +46,6 @@ public class PaymentActivity extends AppCompatActivity {
         gameNumber = (TextView) findViewById(R.id.gameNumber);
         status = (Spinner) findViewById (R.id.statusSpinner);
         radioGroup = (RadioGroup) findViewById(R.id.groupdiscount);
-
-        // db instance and reference
-        // databasePayment = FirebaseDatabase.getInstance().getReference("")
-
 
         list = new ArrayList<String>();
         list.add("PAID: FULLY PAID");
@@ -68,14 +62,9 @@ public class PaymentActivity extends AppCompatActivity {
         id = getIntent().getStringExtra("id").toString();
         bookingID = getIntent().getStringExtra("bookingID").toString();
         size = getIntent().getStringExtra("size");
+        gameInputID = getIntent().getStringExtra("gameInputID");
 
-
-
-
-
-
-
-
+        databasePayment = FirebaseDatabase.getInstance().getReference("gameInput");
 
 
         nextPage.setOnClickListener(new View.OnClickListener() {
@@ -86,10 +75,10 @@ public class PaymentActivity extends AppCompatActivity {
 
                 radioButton = (RadioButton) findViewById(selectedDiscount);
 
-                //Di ko na lagyan ng variable kasi sobrang dami na lagay mo na to rekta sa query
-                //payment.getText().toString();
-                //status.getSelectedItem().toString();
-                //radioButton.getText().toString();
+                databasePayment.child(gameInputID).child("cashPaymentAmount").setValue(payment.getText().toString());
+                databasePayment.child(gameInputID).child("paymentStatus").setValue(status.getSelectedItem().toString());
+                databasePayment.child(gameInputID).child("discount").setValue(radioButton.getText().toString());
+
 
 
                 Intent next = new Intent(PaymentActivity.this, GroupDetailsActivity.class);
