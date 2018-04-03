@@ -80,6 +80,7 @@ public class PaymentActivity extends AppCompatActivity {
                 //payment.getText().toString();
                 //status.getSelectedItem().toString();
                 //radioButton.getText().toString();
+                //heehhe
 
                 Intent next = new Intent(PaymentActivity.this, GroupDetailsActivity.class);
 
