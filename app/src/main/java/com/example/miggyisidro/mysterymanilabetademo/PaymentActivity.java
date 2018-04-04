@@ -87,6 +87,9 @@ public class PaymentActivity extends AppCompatActivity {
 
                 radioButton = (RadioButton) findViewById(selectedDiscount);
 
+
+
+
                 databasePayment.child(gameInputID).child("cashPaymentAmount").setValue(payment.getText().toString());
                 databasePayment.child(gameInputID).child("paymentStatus").setValue(status.getSelectedItem().toString());
                 databasePayment.child(gameInputID).child("discount").setValue(radioButton.getText().toString());

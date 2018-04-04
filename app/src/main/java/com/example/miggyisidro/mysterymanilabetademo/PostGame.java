@@ -76,15 +76,14 @@ public class PostGame extends AppCompatActivity {
                         if(totalseconds < 1800)
                         {
                             Intent i = new Intent(PostGame.this,freeItems.class);
+                            i.putExtra("bookingID", bookingID);
                             startActivity(i);
 
-                        }else if(totalseconds <2700)
-                        {
-                            Intent i = new Intent(PostGame.this,freeItems.class);
-                            startActivity(i);
                         }else
                         {
-
+                            Intent i = new Intent(PostGame.this,buyItems.class);
+                            i.putExtra("bookingID", bookingID);
+                            startActivity(i);
                         }
 
                 }

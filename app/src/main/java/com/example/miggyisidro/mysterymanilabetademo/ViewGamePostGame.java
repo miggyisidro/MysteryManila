@@ -36,7 +36,7 @@ public class ViewGamePostGame extends AppCompatActivity{
     details = (TextView) findViewById(R.id.detailsTxtPost);
     //os = (TextView) findViewById(R.id.osTxt);
         //gameKeeper = (TextView) findViewById(R.id.gkTxtPost);
-       // groupSize = (TextView) findViewById(R.id.grTxtPost);
+        groupSize = (TextView) findViewById(R.id.grTxtPost);
         next = (Button) findViewById(R.id.nextPost);
 
         schedule = getIntent().getStringExtra("schedulePost");
@@ -55,6 +55,7 @@ public class ViewGamePostGame extends AppCompatActivity{
           public void onClick(View v) {
               Intent nextPageView = new Intent(ViewGamePostGame.this, PostGame.class);
               nextPageView.putExtra("bookingID", game);
+              //nextPageView.putExtra("groupSize",groupSize)
               startActivity(nextPageView);
 
           }
