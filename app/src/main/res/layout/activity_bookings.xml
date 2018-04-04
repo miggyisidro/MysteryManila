@@ -23,15 +23,6 @@
         android:layout_alignParentRight="true"
         android:text="LOG OUT"/>
 
-    <Button
-        android:id="@+id/nextPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/labelHeaderBookings"
-        android:layout_below="@+id/labelHeaderBookings"
-
-        android:text="Next" />
-
 
 
     <android.support.v7.widget.RecyclerView
