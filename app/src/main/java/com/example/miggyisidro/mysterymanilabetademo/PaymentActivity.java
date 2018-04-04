@@ -94,6 +94,7 @@ public class PaymentActivity extends AppCompatActivity {
 
 
                 Intent next = new Intent(PaymentActivity.this, GroupDetailsActivity.class);
+                next.putExtra("bookingID", bookingID);
 
                 startActivity(next);
             }

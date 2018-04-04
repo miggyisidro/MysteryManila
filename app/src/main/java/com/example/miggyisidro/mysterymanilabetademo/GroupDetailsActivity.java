@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -19,6 +20,7 @@ public class GroupDetailsActivity extends AppCompatActivity {
 
     private Button nextPage;
     private EditText groupName;
+    private TextView gameNumber;
     private RadioGroup group;
     private RadioButton radio;
     private CheckBox fb;
@@ -27,6 +29,8 @@ public class GroupDetailsActivity extends AppCompatActivity {
     private CheckBox friends;
     private ArrayList<String> list;
     private String heard = "";
+    private String bookingID;
+    private String holder;
 
     DatabaseReference databaseGroupDetails;
 
@@ -43,9 +47,16 @@ public class GroupDetailsActivity extends AppCompatActivity {
         ig = (CheckBox) findViewById(R.id.igBox);
         twitter = (CheckBox) findViewById(R.id.twitterBox);
         friends = (CheckBox) findViewById(R.id.friendsBox);
+        gameNumber = (TextView) findViewById(R.id.gameNumberGd);
+
 
         databaseGroupDetails = FirebaseDatabase.getInstance().getReference("groupDetails");
 
+        bookingID = getIntent().getStringExtra("bookingID").toString();
+
+        holder = "Game# " + bookingID;
+
+        gameNumber.setText(holder);
 
 
 
