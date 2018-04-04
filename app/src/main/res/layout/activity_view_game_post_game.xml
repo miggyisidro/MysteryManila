@@ -35,7 +35,7 @@
                 android:src="@drawable/game" />
 
             <TextView
-                android:id="@+id/detailsTxt"
+                android:id="@+id/detailsTxtPost"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginTop="5dp"
@@ -84,7 +84,7 @@
                 android:text="GROUP SIZE:" />
 
             <TextView
-                android:id="@+id/gr"
+                android:id="@+id/grTxtPost"
                 android:layout_width="match_parent"
                 android:layout_height="34dp"
                 android:gravity="center_vertical|center_horizontal"
@@ -99,7 +99,7 @@
                 android:text="Click NEXT to process to postgame" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/nextPost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"

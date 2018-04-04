@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="0.162" />
 
     <RadioGroup
-        android:id="@+id/radioGroup2"
+        android:id="@+id/solved"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -74,7 +74,7 @@
     </RadioGroup>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/clueTxt"
         android:layout_width="193dp"
         android:layout_height="48dp"
         android:layout_marginBottom="8dp"
@@ -92,7 +92,7 @@
         app:layout_constraintVertical_bias="0.498" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/hours"
         android:layout_width="122dp"
         android:layout_height="39dp"
         android:layout_marginBottom="8dp"
@@ -128,7 +128,7 @@
         app:layout_constraintVertical_bias="0.651" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/minutes"
         android:layout_width="122dp"
         android:layout_height="39dp"
         android:layout_marginBottom="8dp"
@@ -145,7 +145,7 @@
         app:layout_constraintVertical_bias="0.763" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/seconds"
         android:layout_width="122dp"
         android:layout_height="39dp"
         android:layout_marginBottom="116dp"
@@ -163,7 +163,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/nextToTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"

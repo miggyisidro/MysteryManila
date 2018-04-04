@@ -107,6 +107,7 @@ public class GroupDetailsActivity extends AppCompatActivity {
 
 
                 Intent next = new Intent(GroupDetailsActivity.this, OCRActivity.class);
+
                 startActivity(next);
             }
         });

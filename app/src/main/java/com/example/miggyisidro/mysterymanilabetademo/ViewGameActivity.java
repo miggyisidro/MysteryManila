@@ -68,7 +68,7 @@ public class ViewGameActivity extends AppCompatActivity {
         roomName = getIntent().getStringExtra("roomName");
 
 
-        holder = roomName + "|" + schedule + "|" + name;
+        holder = roomName + " | " + schedule + " | " + name;
 
         details.setText(holder);
 
