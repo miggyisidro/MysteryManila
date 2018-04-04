@@ -42,6 +42,7 @@ import static com.google.cloud.vision.v1.Feature.Type.TEXT_DETECTION;
 public class OCRActivity extends AppCompatActivity {
     //Miggy
     //Raffy
+    //Hello
     Button next;
     EditText ocr;
     Button hello;
@@ -100,8 +101,8 @@ public class OCRActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-            imageView.setImageBitmap(bitmap);
+        Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+        imageView.setImageBitmap(bitmap);
 
     }
 
