@@ -40,7 +40,7 @@ import java.util.UUID;
 import static com.google.cloud.vision.v1.Feature.Type.TEXT_DETECTION;
 
 public class OCRActivity extends AppCompatActivity {
-
+    //Miggy
     Button next;
     EditText ocr;
     Button hello;
@@ -54,7 +54,6 @@ public class OCRActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ocr);
         next = (Button) findViewById(R.id.ocr_next);
-        ocr = (EditText) findViewById(R.id.ocr);
         ocrView = (TextView) findViewById(R.id.textView15);
         skip = (Button) findViewById(R.id.button6);
         btnCamera = (Button) findViewById(R.id.btnCamera);
