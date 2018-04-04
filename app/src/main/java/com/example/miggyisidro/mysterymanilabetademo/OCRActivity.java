@@ -43,7 +43,7 @@ public class OCRActivity extends AppCompatActivity {
 
     Button next;
     EditText ocr;
-
+    Button hello;
     ImageView imageView;
     Button btnCamera;
     TextView ocrView;
@@ -57,6 +57,8 @@ public class OCRActivity extends AppCompatActivity {
         ocr = (EditText) findViewById(R.id.ocr);
         ocrView = (TextView) findViewById(R.id.textView15);
         skip = (Button) findViewById(R.id.button6);
+        btnCamera = (Button) findViewById(R.id.btnCamera);
+        imageView = (ImageView) findViewById(R.id.imageView);
 
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,10 +84,6 @@ public class OCRActivity extends AppCompatActivity {
                 startActivity(cameraIntent);
             }
         });
-
-        Button btnCamera = (Button) findViewById(R.id.btnCamera);
-        ImageView imageView = (ImageView) findViewById(R.id.imageView);
-
 
         btnCamera.setOnClickListener(new View.OnClickListener() {
         @Override
