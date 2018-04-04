@@ -95,10 +95,10 @@ public class RecyclerAdapter2 extends RecyclerView.Adapter<RecyclerAdapter2.Recy
                     schedule = (myList.get(getAdapterPosition()).getSchedule());
                     roomName = (myList.get(getAdapterPosition()).getRoomName());
                     name = (myList.get(getAdapterPosition()).getName());
-                    intent.putExtra("bookingID" ,bookingID);
-                    intent.putExtra("schedule", schedule);
-                    intent.putExtra("roomName", roomName);
-                    intent.putExtra("name", name);
+                    intent.putExtra("bookingIDPost" ,bookingID);
+                    intent.putExtra("schedulePost", schedule);
+                    intent.putExtra("roomNamePost", roomName);
+                    intent.putExtra("namePost", name);
                     context.startActivity(intent);
 
 
