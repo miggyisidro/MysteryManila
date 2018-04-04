@@ -21,7 +21,7 @@ public class OngoingActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
 
     private RecyclerView mRecyclerView;
-    private RecyclerAdapter mRecyclerAdapter;
+    private RecyclerAdapter2 mRecyclerAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     Button btnAddItem;
     Button btnNextPage;
@@ -45,7 +45,7 @@ public class OngoingActivity extends AppCompatActivity {
         btnLogOut = (Button) findViewById(R.id.btnLogOut);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        mRecyclerAdapter = new RecyclerAdapter(OngoingActivity.this, myList);
+        mRecyclerAdapter = new RecyclerAdapter2(OngoingActivity.this, myList);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
@@ -92,7 +92,7 @@ public class OngoingActivity extends AppCompatActivity {
                     myList.add(bookings);
                 }
 
-                RecyclerAdapter adapter = new RecyclerAdapter(OngoingActivity.this, myList);
+                RecyclerAdapter2 adapter = new RecyclerAdapter2(OngoingActivity.this, myList);
                 mRecyclerView.setAdapter(adapter);
             }
 
