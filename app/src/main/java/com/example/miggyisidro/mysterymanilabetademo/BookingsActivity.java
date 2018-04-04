@@ -27,7 +27,7 @@ public class BookingsActivity extends Activity {
     private RecyclerAdapter mRecyclerAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     Button btnAddItem;
-    Button btnNextPage;
+
     Button btnLogOut;
     ArrayList<RecyclerData> myList = new ArrayList<>();
     EditText etTitle, etDescription;
@@ -50,7 +50,7 @@ public class BookingsActivity extends Activity {
             startActivity(new Intent(getApplicationContext(), LogInActivity.class));
         }
 
-        btnNextPage = (Button) findViewById(R.id.nextPage);
+
         btnLogOut = (Button) findViewById(R.id.btnLogOut);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -71,14 +71,7 @@ public class BookingsActivity extends Activity {
             }
         });
 
-        btnNextPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent next = new Intent(BookingsActivity.this, ViewGameActivity.class);
-                startActivity(next);
-            }
-        });
-
+    
         /*
         etTitle = (EditText) findViewById(R.id.etTitle);
         etDescription = (EditText) findViewById(R.id.etDescription);

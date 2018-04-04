@@ -7,7 +7,8 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/iconmm"
-        android:label="@string/app_name"
+        android:label="MysteryManila"
+        android:logo="@drawable/iconmm"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

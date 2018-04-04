@@ -138,6 +138,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="next"
+        android:background="@drawable/button_selector2"
+        android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

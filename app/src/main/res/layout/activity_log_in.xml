@@ -23,6 +23,7 @@
         android:layout_marginTop="38dp"
         android:layout_below="@id/mmLogo"
         android:layout_centerHorizontal="true"
+
         android:background="#11000000"
         android:textSize="16dp"
         android:hint="Username" />
@@ -44,10 +45,11 @@
         android:id="@+id/btnLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_password"
-        android:layout_alignEnd="@id/et_password"
-
-        android:text="Log-in"/>
+        android:layout_below="@+id/et_password"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_selector2"
+        android:text="Log-in"
+        android:textColor="@android:color/background_light" />
 
 
     <TextView

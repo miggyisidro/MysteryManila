@@ -33,6 +33,7 @@ public class PaymentActivity extends AppCompatActivity {
     private String size;
     private String bookingID;
     private String gameInputID;
+    private String gameNumberText;
 
     DatabaseReference databasePayment;
 
@@ -43,9 +44,12 @@ public class PaymentActivity extends AppCompatActivity {
 
         nextPage = (Button) findViewById(R.id.button2);
         payment =(EditText) findViewById(R.id.amoutTxt);
-        gameNumber = (TextView) findViewById(R.id.gameNumber);
+        gameNumber = (TextView) findViewById(R.id.gameNumberPayment);
         status = (Spinner) findViewById (R.id.statusSpinner);
         radioGroup = (RadioGroup) findViewById(R.id.groupdiscount);
+
+
+
 
         list = new ArrayList<String>();
         list.add("PAID: FULLY PAID");
@@ -62,7 +66,15 @@ public class PaymentActivity extends AppCompatActivity {
         id = getIntent().getStringExtra("id").toString();
         bookingID = getIntent().getStringExtra("bookingID").toString();
         size = getIntent().getStringExtra("size");
+
         gameInputID = getIntent().getStringExtra("gameInputID");
+
+        gameNumberText = "Game# " + bookingID;
+
+        gameNumber.setText(gameNumberText);
+
+
+
 
         databasePayment = FirebaseDatabase.getInstance().getReference("gameInput");
 
