@@ -15,7 +15,7 @@ public class TermsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terms);
 
-        next = (Button) findViewById(R.id.next_terms);
+        next = (Button) findViewById(R.id.submitTerms);
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
