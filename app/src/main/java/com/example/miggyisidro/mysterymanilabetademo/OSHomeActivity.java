@@ -30,7 +30,7 @@ public class OSHomeActivity extends AppCompatActivity {
         ongoingsImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToOngoing = new Intent(OSHomeActivity.this, BookingsActivity.class);
+                Intent goToOngoing = new Intent(OSHomeActivity.this, OngoingActivity.class);
                 startActivity(goToOngoing);
             }
         });

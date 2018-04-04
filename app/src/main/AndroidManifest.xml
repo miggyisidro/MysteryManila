@@ -28,7 +28,8 @@
         <activity android:name=".TermsActivity" />
         <activity android:name=".OSHomeActivity" />
         <activity android:name=".ViewGamePostGame" />
-        <activity android:name=".PostGame"></activity>
+        <activity android:name=".PostGame" />
+        <activity android:name=".OngoingActivity"></activity>
     </application>
 
 </manifest>
