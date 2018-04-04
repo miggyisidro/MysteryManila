@@ -23,6 +23,15 @@
         android:layout_alignParentRight="true"
         android:text="LOG OUT"/>
 
+    <TextView
+        android:id="@+id/ongoing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ON-GOING GAMES"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_below="@id/labelHeaderBookings"/>
+
 
 
 
@@ -33,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#000000"
-        android:layout_below="@id/labelHeaderBookings"/>
+        android:layout_below="@id/ongoing"/>
 
 
 
