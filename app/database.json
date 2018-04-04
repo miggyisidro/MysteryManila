@@ -1,0 +1,193 @@
+{
+	"branch": {
+		"branchID1": {
+			"branchName": "Jupiter"
+		},
+
+		"branchID2": {
+			"branchName": "Libis"
+		},
+
+		"branchID3": {
+			"branchName": "Century City Mall"
+		},
+
+		"branchID4": {
+			"branchName": "Ayala Malls 30th"
+		}
+
+	},
+
+	"mysteries": {
+		"mysteryID1": {
+			"branchID": "branchID1",
+			"mysteryName": "Rebeccas Room"
+		},
+
+		"mysteryID2": {
+			"branchID": "branchID1",
+			"mysteryName": "Murder in the Mafia"
+		},
+
+		"mysteryID3": {
+			"branchID": "branchID1",
+			"mysteryName": "World of Wizardry"
+		},
+
+		"mysteryID4": {
+			"branchID": "branchID2",
+			"mysteryName": "Aztec Adventure"
+		},
+
+		"mysteryID5": {
+			"branchID": "branchID2",
+			"mysteryName": "Reversed Reality"
+		},
+
+		"mysteryID6": {
+			"branchID": "branchID2",
+			"mysteryName": "Rebeccas Revenge"
+		},
+
+		"mysteryID7": {
+			"branchID": "branchID3",
+			"mysteryName": "Pym Particle"
+		},
+
+		"mysteryID8": {
+			"branchID": "branchID3",
+			"mysteryName": "Debbys Doll"
+		},
+
+		"mysteryID9": {
+			"branchID": "branchID3",
+			"mysteryName": "Virtual Voyage"
+		},
+
+		"mysteryID10": {
+			"branchID": "branchID3",
+			"mysteryName": "Mutants Mission"
+		},
+
+		"mysteryID11": {
+			"branchID": "branchID3",
+			"mysteryName": "Sinister Sensorium"
+		},
+
+		"mysteryID12": {
+			"branchID": "branchID3",
+			"mysteryName": "Alient Assault"
+		},
+
+		"mysteryID13": {
+			"branchID": "branchID3",
+			"mysteryName": "Crime of the Century"
+		},
+
+		"mysteryID14": {
+			"branchID": "branchID4",
+			"mysteryName": "Rebel Resistance"
+		},
+
+		"mysteryID15": {
+			"branchID": "branchID4",
+			"mysteryName": "Sorcerers Stone"
+		},
+
+		"mysteryID16": {
+			"branchID": "branchID4",
+			"mysteryName": "Mr. Moriarty"
+		},
+
+		"mysteryID17": {
+			"branchID": "branchID4",
+			"mysteryName": "Morbid Morgue"
+		}
+
+	},
+
+	"users": {
+		"userID1": {
+			"branchID": "branchID1",
+			"email": "",
+			"name": "Ira Diaz",
+			"username": "ira",
+			"password": "ira"
+		},
+
+		"userID2": {
+			"branchID": "branchID2",
+			"email": "",
+			"name": "Kate De Vera",
+			"username": "kate",
+			"password": "kate"
+		},
+
+		"userID3": {
+			"branchID": "branchID3",
+			"email": "",
+			"name": "Karl San Mateo",
+			"username": "karl",
+			"password": "karl"
+		},
+		"userID4": {
+			"branchID": "branchID4",
+			"email": "",
+			"name": "Jey Bote",
+			"username": "jey",
+			"password": "jey"
+		}
+
+	},
+
+	"customerDetails": {
+		"customerID": {
+			"firstName": "",
+			"lastName": "",
+			"email": "",
+			"city": "",
+			"contactNumber": ""
+		}
+	},
+
+	"bookings": {
+		"bookingID": {
+			"mysteryID": "",
+			"customerID": "",
+			"date": "",
+			"timeslot": "",
+			"groupSize": ""
+		}
+
+	},
+
+	"gameInput": {
+		"gameInputID": {
+			"bookingID": "",
+			"userID": "",
+			"paymentStatus": "",
+			"groupSize": "",
+			"modeOfPayment": "",
+			"cashPaymentAmount": "",
+			"gamekeeper": "",
+			"solved": "",
+			"officialTime": "",
+			"clues": ""
+		}
+	},
+
+	"groupDetails": {
+		"groupID": {
+			"gameInputID": "",
+			"groupName": "",
+			"firstTime": "",
+			"socialMedia": ""
+		}
+
+	}
+
+
+
+
+
+}
