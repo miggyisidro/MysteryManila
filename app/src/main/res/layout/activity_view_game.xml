@@ -70,11 +70,12 @@
 
             <Spinner
                 android:id="@+id/gameKeeperSpinner"
-                android:layout_width="288dp"
+                android:layout_width="246dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:textAlignment="center"
                 android:gravity="center_vertical|center_horizontal"
-                android:textColor="#1325f2"/>
+                android:textColor="#1325f2" />
 
             <TextView
                 android:id="@+id/textView21"
@@ -106,6 +107,7 @@
                 android:layout_width="246dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:textAlignment="center"
                 android:gravity="center_vertical|center_horizontal"
                 android:textColor="#1325f2"/>
 
@@ -122,7 +124,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/button_selector2"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="NEXT"
                 android:textColor="@color/cardview_light_background" />
