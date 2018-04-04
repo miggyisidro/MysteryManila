@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * Created by MiggyIsidro on 12/03/2018.
  */
 
-public class RecyclerAdapter2 extends RecyclerView.Adapter<RecyclerAdapter.RecyclerItemViewHolder> {
+public class RecyclerAdapter2 extends RecyclerView.Adapter<RecyclerAdapter2.RecyclerItemViewHolder> {
     private ArrayList<RecyclerData> myList;
     int mLastPosition = 0;
     private Context context;
