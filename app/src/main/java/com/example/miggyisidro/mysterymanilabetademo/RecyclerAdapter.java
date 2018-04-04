@@ -92,7 +92,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
 
                     intent = new Intent(context, ViewGameActivity.class);
                     bookingID =(myList.get(getAdapterPosition()).getTransactionID());
+                    schedule = (myList.get(getAdapterPosition()).getSchedule());
+                    roomName = (myList.get(getAdapterPosition()).getRoomName());
+                    name = (myList.get(getAdapterPosition()).getName());
                     intent.putExtra("bookingID" ,bookingID);
+                    intent.putExtra("schedule", schedule);
+                    intent.putExtra("roomName", roomName);
+                    intent.putExtra("name", name);
                     context.startActivity(intent);
 
 

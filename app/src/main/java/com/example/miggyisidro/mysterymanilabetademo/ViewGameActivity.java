@@ -25,8 +25,13 @@ public class ViewGameActivity extends AppCompatActivity {
     private Spinner numberID;
     private String game;
     private String bookingID;
-    private ArrayList<String> data;
+    private String data;
+    private String name;
+    private String schedule;
+    private String roomName;
+    private String holder;
     private TextView display;
+    private TextView details;
 
     ArrayAdapter<String> adapter;
     ArrayAdapter<String> adapter2;
@@ -51,12 +56,23 @@ public class ViewGameActivity extends AppCompatActivity {
         groupsize = (Spinner) findViewById(R.id.groupSizeSpinner);
         numberID = (Spinner) findViewById(R.id.IdSpinner);
         display = (TextView) findViewById(R.id.gameNumber);
+        details = (TextView) findViewById(R.id.detailsTxt);
 
 
         databaseGameDetails = FirebaseDatabase.getInstance().getReference("gameInput");
 
 
         bookingID =  getIntent().getStringExtra("bookingID").toString();
+        name = getIntent().getStringExtra("name");
+        schedule = getIntent().getStringExtra("schedule");
+        roomName = getIntent().getStringExtra("roomName");
+
+
+        holder = roomName + "|" + schedule + "|" + name;
+
+        details.setText(holder);
+
+
 
 
 
