@@ -128,7 +128,7 @@ public class OCRActivity extends AppCompatActivity {
     String mCurrentPhotoPath;
 
     private File createImageFile() throws IOException {
-        File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+        File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM + "/Camera");
         File image = File.createTempFile(
                 "example",  /* prefix */
                 ".jpg",         /* suffix */
