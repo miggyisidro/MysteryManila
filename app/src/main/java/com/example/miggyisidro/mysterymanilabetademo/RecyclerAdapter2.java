@@ -90,7 +90,7 @@ public class RecyclerAdapter2 extends RecyclerView.Adapter<RecyclerAdapter2.Recy
                     Intent intent;
 
 
-                    intent = new Intent(context, ViewGameActivity.class);
+                    intent = new Intent(context, ViewGamePostGame.class);
                     bookingID =(myList.get(getAdapterPosition()).getTransactionID());
                     schedule = (myList.get(getAdapterPosition()).getSchedule());
                     roomName = (myList.get(getAdapterPosition()).getRoomName());
