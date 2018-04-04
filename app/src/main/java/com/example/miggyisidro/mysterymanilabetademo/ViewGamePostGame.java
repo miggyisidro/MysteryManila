@@ -32,7 +32,7 @@ public class ViewGamePostGame extends AppCompatActivity{
         setContentView(R.layout.activity_view_game_post_game);
 
 
-    gameNumber = (TextView) findViewById(R.id.gameNumberTxtPost);
+    gameNumber = (TextView) findViewById(R.id.gameNumberpost);
     details = (TextView) findViewById(R.id.detailsTxtPost);
     //os = (TextView) findViewById(R.id.osTxt);
         //gameKeeper = (TextView) findViewById(R.id.gkTxtPost);
