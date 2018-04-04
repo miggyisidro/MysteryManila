@@ -41,6 +41,7 @@ import static com.google.cloud.vision.v1.Feature.Type.TEXT_DETECTION;
 
 public class OCRActivity extends AppCompatActivity {
     //Miggy
+    //Raffy
     Button next;
     EditText ocr;
     Button hello;
