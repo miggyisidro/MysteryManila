@@ -33,6 +33,7 @@ public class ViewGameActivity extends AppCompatActivity {
     List<String> groupsizelist;
     List<String> numeberIDlist;
 
+
     DatabaseReference databaseGameDetails;
 
 
