@@ -44,7 +44,7 @@ public class ViewGamePostGame extends AppCompatActivity{
         name = getIntent().getStringExtra("name");
         game = getIntent().getStringExtra("bookingIDPost");
 
-        groupSize.setText(getIntent().getStringExtra("groupSize").toString());
+
 
         holderheader = "Game# " + game;
         detailsholder = roomname + " | " + schedule + " | " + name;

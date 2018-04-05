@@ -37,8 +37,7 @@ public class PlayerDetailsActivity extends AppCompatActivity {
         Number = (EditText) findViewById(R.id.numberTxt);
         city = (EditText) findViewById(R.id.cityTxt);
 
-        gSize = Integer.parseInt(getIntent().getStringExtra("gSize"));
-        ocrNo = Integer.parseInt(getIntent().getStringExtra("ocrNo"));
+
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,17 +58,12 @@ public class PlayerDetailsActivity extends AppCompatActivity {
                 databasePlayerDetails.child(customerID).child("city").setValue(city.getText().toString());
                 databasePlayerDetails.child(customerID).child("number").setValue(Number.getText().toString());
 
+                Intent i = new Intent(PlayerDetailsActivity.this, TermsActivity.class);
+                startActivity(i);
 
 
-                if(gSize > 0){
-                    Intent refresh = new Intent(PlayerDetailsActivity.this, PlayerDetailsActivity.class);
-                    gSize--;
-                    refresh.putExtra("gSize",getIntent().getStringExtra("gSize"));
-                    startActivity(refresh);
-                }else {
-                    Intent next = new Intent(PlayerDetailsActivity.this, TermsActivity.class);
-                    startActivity(next);
-                }
+
+
             }
         });
     }
