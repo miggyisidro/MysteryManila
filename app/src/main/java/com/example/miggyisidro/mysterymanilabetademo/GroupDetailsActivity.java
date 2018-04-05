@@ -107,7 +107,8 @@ public class GroupDetailsActivity extends AppCompatActivity {
 
 
                 Intent next = new Intent(GroupDetailsActivity.this, OCRActivity.class);
-
+                next.putExtra("gSize", getIntent().getStringExtra("gSize"));
+                next.putExtra("ocrNo", getIntent().getStringExtra("ocrNo"));
                 startActivity(next);
             }
         });

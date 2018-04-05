@@ -42,6 +42,8 @@ public class OCRActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //change -- Direct to OS_HOME
                 Intent next = new Intent(OCRActivity.this, PlayerDetailsActivity.class);
+                next.putExtra("gSize", getIntent().getStringExtra("gSize"));
+                next.putExtra("ocrNo", getIntent().getStringExtra("ocrNo"));
                 startActivity(next);
             }
         });

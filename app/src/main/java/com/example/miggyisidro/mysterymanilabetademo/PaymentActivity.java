@@ -34,6 +34,7 @@ public class PaymentActivity extends AppCompatActivity {
     private String bookingID;
     private String gameInputID;
     private String gameNumberText;
+    int gSize, ocrno;
 
     DatabaseReference databasePayment;
 
@@ -97,6 +98,8 @@ public class PaymentActivity extends AppCompatActivity {
 
 
                 Intent next = new Intent(PaymentActivity.this, GroupDetailsActivity.class);
+                next.putExtra("gSize", getIntent().getStringExtra("gSize"));
+                next.putExtra("ocrNo", getIntent().getStringExtra("ocrNo"));
                 next.putExtra("bookingID", bookingID);
 
                 startActivity(next);
