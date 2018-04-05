@@ -103,6 +103,9 @@ public class OCRActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         Bitmap bitmap = (Bitmap) data.getExtras().get("data");
         imageView.setImageBitmap(bitmap);
+        String title = "sample";
+        String desc = "sample";
+        MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, title, desc);
 
     }
 
