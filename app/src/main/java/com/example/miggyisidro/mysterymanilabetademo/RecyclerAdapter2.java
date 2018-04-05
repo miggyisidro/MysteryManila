@@ -86,6 +86,7 @@ public class RecyclerAdapter2 extends RecyclerView.Adapter<RecyclerAdapter2.Recy
                     String name ="";
                     String groupSize="";
                     String date="";
+                    String gk;
 
                     Intent intent;
 
@@ -95,10 +96,13 @@ public class RecyclerAdapter2 extends RecyclerView.Adapter<RecyclerAdapter2.Recy
                     schedule = (myList.get(getAdapterPosition()).getSchedule());
                     roomName = (myList.get(getAdapterPosition()).getRoomName());
                     name = (myList.get(getAdapterPosition()).getName());
+                    groupSize = (myList.get(getAdapterPosition()).getGroupSize());
+
                     intent.putExtra("bookingIDPost" ,bookingID);
                     intent.putExtra("schedulePost", schedule);
                     intent.putExtra("roomNamePost", roomName);
                     intent.putExtra("namePost", name);
+                    intent.putExtra("gs", groupSize);
                     context.startActivity(intent);
 
 

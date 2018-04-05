@@ -31,13 +31,22 @@ public class OngoingActivity extends AppCompatActivity {
     EditText etTitle, etDescription;
     String title = "", description = "";
 
+    static ArrayList<String> ongoingList = new ArrayList<>();
+
     DatabaseReference databaseBooking;
     DatabaseReference databaseGroupDetails;
+
+
 
     //temp
     private TextView test;
 
     static String bookingID;
+    static int count = 0;
+
+    static String asd;
+
+    DatabaseReference databaseGameInput;
 
 
     @Override
@@ -46,7 +55,8 @@ public class OngoingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ongoing);
 
         databaseBooking = FirebaseDatabase.getInstance().getReference("bookings");
-        databaseGroupDetails = FirebaseDatabase.getInstance().getReference("groupDetails");
+        databaseGroupDetails = FirebaseDatabase.getInstance().getReference("gameInput");
+        databaseGameInput = FirebaseDatabase.getInstance().getReference();
 
 
 
@@ -87,65 +97,112 @@ public class OngoingActivity extends AppCompatActivity {
 
     }
 
+    public ArrayList getOngoingList(){
+
+        databaseGroupDetails.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+                for(DataSnapshot uniqueKeySnapshot : dataSnapshot.getChildren()){
+                    if(!uniqueKeySnapshot.child("bookingID").getValue(String.class).isEmpty() && uniqueKeySnapshot.child("bookingID").getValue(String.class) != null){
+                        //test.setText(uniqueKeySnapshot.child("bookingID").getValue(String.class));
+                        String s = (String) uniqueKeySnapshot.child("bookingID").getValue();
+                        ongoingList.add(s);
+                    }
+                }
+
+
+                //Integer size = ongoingList.size();
+                //test.setText(size.toString());
+
+
+                /*
+                ongoingList.clear();
+
+                for(DataSnapshot uniqueKeySnapshot : dataSnapshot.getChildren()){
+                    if(!uniqueKeySnapshot.child("bookingID").getValue(String.class).isEmpty() && uniqueKeySnapshot.child("bookingID").getValue(String.class) != null){
+                        //test.setText(uniqueKeySnapshot.child("bookingID").getValue(String.class));
+                        ongoingList.add(uniqueKeySnapshot.child("bookingID").getValue(String.class));
+                    }
+                }
+
+                Integer size = ongoingList.size();
+
+                test.setText(size.toString());
+                 */
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        return ongoingList;
+    }
+
+    public void insertRecyclerView(){
+
+        this.getOngoingList();
+        test.setText(getOngoingList().size());
+        databaseBooking.addValueEventListener(new ValueEventListener()
+
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                myList.clear();
+
+                for(DataSnapshot uniqueKeySnapshot : dataSnapshot.getChildren()){
+                    for(int i = 0; i < ongoingList.size(); i++){
+                        String s = (String) uniqueKeySnapshot.child("transactionID").getValue();
+                        if(s.equals(ongoingList.get(i).toString()) && !s.equals(null)){
+                            RecyclerData bookings = uniqueKeySnapshot.getValue(RecyclerData.class);
+                            myList.add(bookings);
+                        }
+
+
+                    }
+
+                }
+
+
+                Integer size = ongoingList.size();
+                test.setText("hello");
+
+
+                RecyclerAdapter2 adapter = new RecyclerAdapter2(OngoingActivity.this, myList);
+                mRecyclerView.setAdapter(adapter);
+
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
     protected void onStart(){
         super.onStart();
 
-        //pulling from firebase
-
-
-
-        databaseGroupDetails.addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseGroupDetails.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.hasChild("gameInputID")) {
-                    // get booking ID
-
-                    databaseGroupDetails.child("bookingID").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            bookingID = dataSnapshot.getValue().toString();
-
-                            test.setText(bookingID);
-
-
-
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
-                        }
-                    });
-
-
-
-                    // get booking
-                    /*
-                    databaseBooking.addListenerForSingleValueEvent(new ValueEventListener() {
-
-
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            if(dataSnapshot.hasChild(bookingID)){
-
-                                DataSnapshot bookingSnapshot = (DataSnapshot) dataSnapshot.getChildren();
-                                RecyclerData bookings = bookingSnapshot.getValue(RecyclerData.class);
-
-                                myList.add(bookings);
-
-                                RecyclerAdapter2 adapter = new RecyclerAdapter2(OngoingActivity.this, myList);
-                                mRecyclerView.setAdapter(adapter);
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
-                        }
-                    });
-                     */
-
+                for(DataSnapshot uniqueKeySnapshot : dataSnapshot.getChildren()){
+                    if(!uniqueKeySnapshot.child("bookingID").getValue(String.class).isEmpty() && uniqueKeySnapshot.child("bookingID").getValue(String.class) != null){
+                        //test.setText(uniqueKeySnapshot.child("bookingID").getValue(String.class));
+                        String s = (String) uniqueKeySnapshot.child("bookingID").getValue();
+                        ongoingList.add(s);
+                    }
                 }
+
+                asd="asd";
+
             }
 
             @Override
@@ -154,6 +211,45 @@ public class OngoingActivity extends AppCompatActivity {
             }
         });
 
+        databaseBooking.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer size = ongoingList.size();
+                //test.setText(size.toString());
+
+                myList.clear();
+
+                for(DataSnapshot uniqueKeySnapshot : dataSnapshot.getChildren()){
+                    if(ongoingList.contains(uniqueKeySnapshot.child("transactionID").getValue(String.class)))
+                    {
+                        RecyclerData bookings = uniqueKeySnapshot.getValue(RecyclerData.class);
+                        myList.add(bookings);
+                        //test.setText(size.toString()+ "PASOK!");
+                    }
+                }
+
+
+                //Integer size = ongoingList.size();
+                //test.setText(size.toString());
+                //test.setText(myList.size());
+
+                RecyclerAdapter2 adapter = new RecyclerAdapter2(OngoingActivity.this, myList);
+                mRecyclerView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+        //working recyclerview only without query
+
+
+
+
+
         /*
         databaseBooking.addValueEventListener(new ValueEventListener() {
             @Override
@@ -161,10 +257,9 @@ public class OngoingActivity extends AppCompatActivity {
 
                 myList.clear();
 
-                for (DataSnapshot bookingSnapshot : dataSnapshot.getChildren()) {
-                    RecyclerData bookings = bookingSnapshot.getValue(RecyclerData.class);
-
-                    myList.add(bookings);
+                for(DataSnapshot uniqueKeySnapshot : dataSnapshot.getChildren()){
+                            RecyclerData bookings = uniqueKeySnapshot.getValue(RecyclerData.class);
+                            myList.add(bookings);
                 }
 
                 RecyclerAdapter2 adapter = new RecyclerAdapter2(OngoingActivity.this, myList);
@@ -177,5 +272,43 @@ public class OngoingActivity extends AppCompatActivity {
             }
         });
          */
+
+
+
+
+
+
+        /*
+        databaseGroupDetails.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                ongoingList.clear();
+
+                for(DataSnapshot uniqueKeySnapshot : dataSnapshot.getChildren()){
+                    if(!uniqueKeySnapshot.child("bookingID").getValue(String.class).isEmpty() && uniqueKeySnapshot.child("bookingID").getValue(String.class) != null){
+                        test.setText(uniqueKeySnapshot.child("bookingID").getValue(String.class));
+                        ongoingList.add(uniqueKeySnapshot.child("bookingID").getValue(String.class));
+                    }
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        */
+
+
+
+
+
+
+
+
     }
 }

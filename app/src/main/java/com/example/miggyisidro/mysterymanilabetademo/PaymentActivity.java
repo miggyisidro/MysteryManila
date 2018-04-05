@@ -94,6 +94,7 @@ public class PaymentActivity extends AppCompatActivity {
                 databasePayment.child(gameInputID).child("cashPaymentAmount").setValue(payment.getText().toString());
                 databasePayment.child(gameInputID).child("paymentStatus").setValue(status.getSelectedItem().toString());
                 databasePayment.child(gameInputID).child("discount").setValue(radioButton.getText().toString());
+                databasePayment.child(gameInputID).child("isOngoing").setValue("TRUE");
 
 
 
